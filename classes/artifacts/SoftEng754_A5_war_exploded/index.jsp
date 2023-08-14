@@ -1,0 +1,41 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>University of Auckland: Class enrollment system</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+</head>
+<body data-gr-c-s-loaded="true" style="background-color: royalblue">
+<br/>
+<div style="text-align: center">
+    <div style="flex: auto; color: Yellow">
+    <h1 class="title">University of Auckland: Class enrollment system</h1>
+    </div>
+    <h2 style="color: Yellow;">Welcome, to access the class enrollment system, please log in using the form below</h2>
+    <br/>
+    <form action="AcademicProfile" method="POST" >
+    <div class="container" >
+        <label id="username-label" class="label" style="color: darkblue; font-weight: bold; font-size: 20px">Username</label>
+        <input id="username-login" name="username" class="text-input" style="border-radius: 10px; width: 30%; height: 5%; background-color: lightblue" type="text"/>
+        <br/>
+        <br/>
+        <label class="label" style="color: darkblue; font-weight: bold; font-size: 20px">Password</label>
+        <input id="password-login" name="password" class="text-input"  style="border-radius: 10px; width: 30%; height: 5%; background-color: lightblue" type="password"/>
+        <br/>
+        <br/>
+        <label class="label" style="color: darkblue; font-weight: bold; font-size: 20px">User type</label>
+        <select name="usertype" id="usertype" style="border-radius: 10px; width: 30%; height: 5%; background-color: lightblue">
+                <option selected="selected">Please Select a User type</option>
+                <option value="1">Student</option>
+                <option value="2">Lecturer</option>
+                <option value="3">Staff Administrator</option>
+        </select>
+        <br/>
+        <br/>
+        <br/>
+        <button id="button-login" class="btn-lg btn-submit" style="background-color: green; color: lightblue" type="submit" value="Submit"/>Log In</button>
+    </div>
+    </form>
+</div>
+</div>
+</body>
+</html>

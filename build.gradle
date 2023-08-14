@@ -1,0 +1,41 @@
+plugins {
+    id 'jacoco'
+    id 'war'
+    id 'org.gretty' version '3.0.3'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'org.dizitart:nitrite:3.4.2'
+    compile 'javax.servlet:jstl:1.2'
+
+    providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
+
+    testCompile "junit:junit:4.13"
+    testCompile 'io.github.bonigarcia:webdrivermanager:1.6.1'
+    testCompile "io.github.bonigarcia:selenium-jupiter:3.3.4"
+    testCompile "org.mockito:mockito-core:1.+"
+    testImplementation group: 'io.cucumber', name: 'cucumber-core', version: '5.6.0'
+    testImplementation group: 'io.cucumber', name: 'cucumber-java', version: '5.6.0'
+    testImplementation group: 'io.cucumber', name: 'cucumber-junit', version: '5.6.0'
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        html.enabled false
+    }
+}
+
+gretty {
+    contextPath = '/'
+    integrationTestTask = 'test'
+}
+
+check.dependsOn jacocoTestReport
